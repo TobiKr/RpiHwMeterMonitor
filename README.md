@@ -3,6 +3,8 @@
 Display basic system information and energy meter readings (fetched via [IOBroker][]) on a ST7735 OLED display (using [luma.oled][]).
 This is a re-implementation of "System Info Display" by [Alvaro Valdebenito][avaldebe].
 
+![RaspberryPi Energy-Meter](assets/rpi-meter.jpg?raw=true "RaspberryPi Energy-Meter")
+
 [IOBroker]: https://www.iobroker.net/#en/download
 [luma.oled]: https://github.com/rm-hull/luma.oled
 
