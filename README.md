@@ -15,7 +15,7 @@ After `sys_info.py` is called, the display will be updated once a minute.
 ### Hardware Setup ###
 This script is built for a ST7735 OLED display. Please make sure your wiring is correct. The wiring below is for a 1.77" OLED offered by AZ Delivery.
 
-![ST7735 wiring](assets/rpi-wiring.png?raw=true "ST7735 wiring for AZ-Delivery 1.77" LCD")
+![ST7735 wiring](assets/rpi-wiring.png?raw=true "ST7735 wiring for AZ-Delivery 1.77\" LCD")
 
 | TFT LCD pin | RaspberryPi pin | wire color |
 | --- | --- | --- |
