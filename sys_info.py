@@ -86,11 +86,9 @@ def stats(device, info, font):
 def main():
     s = spi(port=0, device=0, gpio_DC=23, gpio_RST=24)
     device=st7735(s,rotate=2,width=160,height=128,h_offset=0,v_offset=0,bgr=False)
-    device.backlight(False)
-    forever = True
 
     # custom fonts
-    font_path = "%s/fonts/%%s"%os.path.dirname(__file__)
+    font_path = "%s/assets/%%s"%os.path.dirname(__file__)
     font = dict(
         text_small = ImageFont.truetype(font_path%'Montserrat-Light.ttf', 12),
         text_large = ImageFont.truetype(font_path%'Montserrat-Medium.ttf', 19),
@@ -113,10 +111,9 @@ def main():
 
     stats(device, info, font)
     time.sleep(5)  # 1st update after 5s
-    while forever:
+    while True:
         stats(device, info, font)
         time.sleep(60) # update every 60 sec
-
 
 if __name__ == "__main__":
     try:
