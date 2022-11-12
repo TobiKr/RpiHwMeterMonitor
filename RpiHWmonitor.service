@@ -1,10 +1,10 @@
 [Unit]
-Description=Display basic system information on a OLED display
+Description=Display basic system information and Energy Meter on a OLED display
 After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/home/pi/RpiHWmonitor/sys_info.py
+ExecStart=/home/pi/RpiHwMeterMonitor/sys_info.py
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5s
