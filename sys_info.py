@@ -9,7 +9,7 @@ Display basic system and energy meter information.
 - disk: disk usage [%]
 - temp: CPU temperature [°C]
 - meter1/2: Energy Meter from IOBroker in Kilowatt/hour
-- datetimenow: current date and time 
+- datetimenow: current date and time
 """
 
 import os
@@ -63,12 +63,15 @@ def sinfo(key):
         return None
 
 def getIoBrokerObjectState(object):
-    state = subprocess.check_output(
-        "/usr/bin/iobroker state get " + object,
-        shell=True,
-    ).decode('UTF-8')
-    state_dict = json.loads(state)
-    return state_dict['val']
+    try:
+        state = subprocess.check_output(
+            "/usr/bin/iobroker state get " + object,
+            shell=True,
+        ).decode('UTF-8')
+        state_dict = json.loads(state)
+        return state_dict['val']
+    except:
+        return "N/A"
 
 def stats(device, info, font):
     """
@@ -110,9 +113,11 @@ def main():
     )
 
     stats(device, info, font)
+    print('Display output started')
     time.sleep(5)  # 1st update after 5s
     while True:
         stats(device, info, font)
+        print('Display output updated at ' + datetime.now().strftime("%d.%m.%y %H:%M:%S"))
         time.sleep(60) # update every 60 sec
 
 if __name__ == "__main__":

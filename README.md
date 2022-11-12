@@ -11,9 +11,9 @@ This is a re-implementation of "System Info Display" by [Alvaro Valdebenito][ava
 After `sys_info.py` is called, the display will be updated once a minute.
 
 ### Hardware Setup ###
-This script is built for a ST7735 OLED display. Please make sure your wiring is correct. 
+This script is built for a ST7735 OLED display. Please make sure your wiring is correct. The wiring below is for a 1.77" OLED offered by AZ Delivery.
 
-![ST7735 wiring](assets/rpi-wiring.png?raw=true "ST7735 wiring")
+![ST7735 wiring](assets/rpi-wiring.png?raw=true "ST7735 wiring for AZ-Delivery 1.77" LCD")
 
 | TFT LCD pin | RaspberryPi pin | wire color |
 | --- | --- | --- |
@@ -93,7 +93,7 @@ sudo systemctl reload-or-restart RpiHwMeterMonitor
 # check service status
 systemctl status RpiHwMeterMonitor
 
-# start after reboot
+# start automatically after reboot
 sudo systemctl enable RpiHwMeterMonitor # start after reboot
 #sudo systemctl disable RpiHwMeterMonitor # don't start
 sudo reboot
